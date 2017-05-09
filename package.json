@@ -1,0 +1,25 @@
+{
+  "name": "bundle-dedupe-testcase",
+  "version": "0.1.0",
+  "main": "./package.json",
+  "scripts": {
+    "prepublish": "npm ls",
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "dependencies": {
+    "nan": "^2.3.5",
+    "node-pre-gyp": "^0.6.28"
+  },
+  "bundledDependencies":["node-pre-gyp"],
+  "devDependencies": {
+    "minimist": "~1.2.0",
+    "@mapbox/vtinfo": "0.0.5"
+  },
+  "binary": {
+    "module_name": "bundle-dedupe-testcase",
+    "module_path": "./lib/binding/",
+    "host": "https://mapbox-node-binary.s3.amazonaws.com",
+    "remote_path": "./{name}/v{version}/{configuration}/",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz"
+  }
+}
