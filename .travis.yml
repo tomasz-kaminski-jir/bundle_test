@@ -4,3 +4,13 @@ node_js:
 - '0.10'
 - '4'
 - '6'
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-5
+
+before_install:
+  - export CXX=g++-5
