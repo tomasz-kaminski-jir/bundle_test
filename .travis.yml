@@ -14,3 +14,9 @@ addons:
 
 before_install:
   - export CXX=g++-5
+
+install:
+  - npm install
+
+script:
+  - true
