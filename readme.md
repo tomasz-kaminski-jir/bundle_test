@@ -15,7 +15,8 @@ That happens with node v6.10.3 and npm v3.10.10 when `npm ls` is run after insta
  - With node v0.10, v4, and v7 the `minimist@1.2.0` is installed at the top level and `minimist@0.0.8` is installed within the `mkdirp` dependended upon my `node-pre-gyp`.
  - With node v6 the `minimist@1.2.0` is installed at the top level and `minimist@0.0.8` is NOT installed within the `mkdirp` dependended upon my `node-pre-gyp`.
  - During npm install `node-pre-gyp` is run and the `mkdirp` appears to work at runtime with all versions of node despite the deduping problem with node v6
- - But with node v6 the `npm ls` that is run during `prepublish` (which is automatically run by npm at the end of the install) errors since the pinnned `minimist@0.0.8` is missing.
+ - Npm runs `prepublish` during install - context at https://github.com/npm/npm/blob/latest/CHANGELOG.md#new-prepare-script-prepublish-deprecated-breaking
+ - With node v6 the `npm ls` that is run during `prepublish` (which is automatically run by npm at the end of the install) errors since the pinnned `minimist@0.0.8` is missing.
 
 The tree that `npm ls` is outputs (when it returns an error with node v6) is:
 
