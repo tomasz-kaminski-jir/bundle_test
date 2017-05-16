@@ -6,7 +6,7 @@ This testcase replicates an error of:
 npm ERR! missing: minimist@0.0.8, required by mkdirp@0.5.1
 ```
 
-When `npm ls` is run after install of the module. What appears to be happening is that:
+That happens with node v6.10.3 and npm v3.10.10 when `npm ls` is run after install of the module. What appears to be happening is that:
 
  - The module depends on `minimist@~1.2.0`
  - The module depends on `node-pre-gyp` which depends on `mkdirp@^0.5.1`
@@ -24,3 +24,5 @@ The tree that `npm ls` is outputs (when it returns an error with node v6) is:
   ├���┬ mkdirp@0.5.1
   │ └── UNMET DEPENDENCY minimist@0.0.8
  ```
+
+This does not happen with node v7 and npm v4.2.0
