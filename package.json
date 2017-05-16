@@ -12,8 +12,7 @@
   },
   "bundledDependencies":["node-pre-gyp"],
   "devDependencies": {
-    "minimist": "~1.2.0",
-    "@mapbox/vtinfo": "0.0.5"
+    "minimist": "~1.2.0"
   },
   "binary": {
     "module_name": "bundle-dedupe-testcase",
